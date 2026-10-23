@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Configuração de AMBIENTE do contêiner do motor: HTTP só em 127.0.0.1, AJP removido (Ghostcat), shutdown só local. -->
+<Server port="9256" address="127.0.0.1" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+  <Service name="Catalina">
+    <Connector port="9257" address="127.0.0.1" protocol="HTTP/1.1" connectionTimeout="20000" maxPostSize="20480000" />
+    <Engine name="Catalina" defaultHost="localhost">
+      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="false" deployXML="true">
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log." suffix=".txt" pattern="%h %t &quot;%m %U&quot; %s %b %D" />
+      </Host>
+    </Engine>
+  </Service>
+</Server>

@@ -1,0 +1,152 @@
+{
+  "versaoEspecificacao": "1.0",
+  "_aviso": "Exemplo FICTÍCIO para testes. Nomes, documentos e números não correspondem a pessoas reais.",
+  "processo": {
+    "numero": "0000123-85.2025.5.04.0001",
+    "regional": "TRT4",
+    "vara": "1ª Vara do Trabalho de Porto Alegre"
+  },
+  "partes": {
+    "reclamante": {
+      "nome": "Fulano de Tal (fictício)"
+    },
+    "reclamado": {
+      "nome": "Empresa Exemplo Ltda (fictícia)"
+    },
+    "advogados": [
+      {
+        "nome": "Advogada Exemplo",
+        "oab": "RS000000",
+        "representa": "reclamante"
+      }
+    ]
+  },
+  "contrato": {
+    "admissao": "2019-03-01",
+    "demissao": "2024-06-30",
+    "ajuizamento": "2025-02-10",
+    "tipoRescisao": "sem_justa_causa",
+    "avisoPrevio": {
+      "tipo": "indenizado",
+      "projetar": true
+    },
+    "ultimaRemuneracao": "3500.00"
+  },
+  "parametros": {
+    "uf": "RS",
+    "municipio": "Porto Alegre",
+    "cargaHorariaMensal": "220",
+    "sabadoDiaUtil": false,
+    "prescricao": {
+      "quinquenal": true,
+      "fgtsTrintenaria": false
+    }
+  },
+  "historicoSalarial": [
+    {
+      "nome": "Salário base",
+      "incidencias": {
+        "fgts": true,
+        "inss": true
+      },
+      "periodos": [
+        {
+          "de": "2019-03",
+          "ate": "2021-12",
+          "valor": "3000.00",
+          "fgtsRecolhido": true,
+          "inssRecolhido": true
+        },
+        {
+          "de": "2022-01",
+          "ate": "2024-06",
+          "valor": "3500.00",
+          "fgtsRecolhido": true,
+          "inssRecolhido": true
+        }
+      ]
+    }
+  ],
+  "verbas": [
+    {
+      "catalogo": "HORAS EXTRAS 50%",
+      "periodo": {
+        "inicio": "2020-02-10",
+        "fim": "2024-06-30"
+      },
+      "base": {
+        "tipo": "historico_salarial",
+        "historicos": [
+          "Salário base"
+        ]
+      },
+      "divisor": {
+        "tipo": "carga_horaria",
+        "valor": "220"
+      },
+      "multiplicador": "1.5",
+      "quantidade": {
+        "tipo": "informada",
+        "valor": "20"
+      },
+      "_fonte": "Sentença, fl. 230: 20 horas extras mensais",
+      "reflexos": [
+        {
+          "catalogo": "REPOUSO SEMANAL REMUNERADO E FERIADO"
+        },
+        {
+          "catalogo": "13º SALÁRIO"
+        },
+        {
+          "catalogo": "FÉRIAS + 1/3"
+        },
+        {
+          "catalogo": "AVISO PRÉVIO"
+        }
+      ]
+    }
+  ],
+  "fgts": {
+    "aliquota": "8",
+    "multa": "40",
+    "deduzirDepositados": true
+  },
+  "impostoDeRenda": {
+    "apurar": true,
+    "dependentes": 0
+  },
+  "honorarios": [
+    {
+      "devedor": "reclamado",
+      "percentual": "15",
+      "base": "bruto"
+    }
+  ],
+  "correcaoJurosMulta": {
+    "combinacao": [
+      {
+        "aPartirDe": "2019-03-01",
+        "indice": "IPCAE",
+        "juros": "SEM_JUROS"
+      },
+      {
+        "aPartirDe": "2025-02-10",
+        "indice": "SELIC",
+        "juros": "SEM_JUROS"
+      }
+    ],
+    "indicesAcumulados": "MES_SUBSEQUENTE_AO_VENCIMENTO"
+  },
+  "anotacoes": {
+    "premissas": [
+      "Correção conforme ADC 58/59 do STF: IPCA-E na fase pré-judicial e SELIC (que já inclui juros) a partir do ajuizamento. Exemplo ilustrativo; conferir a regra vigente (Lei 14.905/2024) para cada caso."
+    ],
+    "fontes": [
+      {
+        "campo": "/contrato/admissao",
+        "documento": "CTPS (fictícia)",
+        "pagina": "12"
+      }
+    ]
+  }
+}

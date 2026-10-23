@@ -1,0 +1,18 @@
+# Binários e dados do PJe-Calc (NUNCA versionar — ver docs/09-aspectos-legais.md)
+motor/runtime/dist/
+**/pjecalc-dist/
+**/.dados/
+*.h2.db
+*.exe
+# Cálculos e documentos de clientes (dados pessoais — LGPD)
+*.PJC
+*.pjc
+dados-clientes/
+saida/
+# Ambiente
+.env
+.env.*
+!.env.exemplo
+node_modules/
+dist/
+.DS_Store

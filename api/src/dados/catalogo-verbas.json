@@ -1,0 +1,962 @@
+{
+ "origem": "Biblioteca de verbas (TBVERBA/TBVERBABASE) do PJe-Calc Cidadão 2.14.0 — catálogo PROVISÓRIO; será substituído pelo lido do motor instalado (2.16.x).",
+ "versaoPjeCalc": "2.14.0",
+ "verbas": [
+  {
+   "nome": "13º SALÁRIO",
+   "caracteristica": "13_salario",
+   "ocorrencia": "dezembro",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "12.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "MULTA DO ARTIGO 467 DA CLT"
+   ]
+  },
+  {
+   "nome": "ABONO PECUNIÁRIO",
+   "caracteristica": "comum",
+   "ocorrencia": "periodo_aquisitivo",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "3.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "ACORDO (MERA LIBERALIDADE)",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "ACORDO (MULTA)",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "ACORDO (VERBAS INDENIZATÓRIAS)",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "ACORDO (VERBAS REMUNERATÓRIAS)",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "ADICIONAL DE HORAS EXTRAS 50%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "0.50000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS +1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE INSALUBRIDADE 10%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.10000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE INSALUBRIDADE 20%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.20000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE INSALUBRIDADE 40%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.40000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE PERICULOSIDADE 30%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.30000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE PRODUTIVIDADE 30%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.30000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE RISCO 40%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.40000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE SOBREAVISO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "0.33333333",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO"
+   ]
+  },
+  {
+   "nome": "ADICIONAL DE TRANSFERÊNCIA 25%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.25000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "ADICIONAL NOTURNO 20%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "0.20000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "AJUDA DE CUSTO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "AVISO PRÉVIO",
+   "caracteristica": "aviso_previo",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "30.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "MULTA DO ARTIGO 467 DA CLT"
+   ]
+  },
+  {
+   "nome": "CESTA BÁSICA",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "COMISSÃO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "DEVOLUÇÃO DE DESCONTOS INDEVIDOS",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "DIFERENÇA SALARIAL",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "DIÁRIAS - INTEGRAÇÃO AO SALÁRIO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "DIÁRIAS - PAGAMENTO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "FERIADO EM DOBRO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "30.0000",
+   "multiplicadorPadrao": "2.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "FÉRIAS + 1/3",
+   "caracteristica": "ferias",
+   "ocorrencia": "periodo_aquisitivo",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "12.0000",
+   "multiplicadorPadrao": "1.33333333",
+   "reflexosDisponiveis": [
+    "MULTA DO ARTIGO 467 DA CLT"
+   ]
+  },
+  {
+   "nome": "GORJETA",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "0.10000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "GRATIFICAÇÃO DE FUNÇÃO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "GRATIFICAÇÃO POR TEMPO DE SERVIÇO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "100.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "HORAS EXTRAS 100%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "2.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "HORAS EXTRAS 50%",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "1.50000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "HORAS IN ITINERE",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "1.50000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "INDENIZAÇÃO ADICIONAL",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "INDENIZAÇÃO PIS - ABONO SALARIAL",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "INDENIZAÇÃO POR DANO ESTÉTICO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "INDENIZAÇÃO POR DANO MATERIAL",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "INDENIZAÇÃO POR DANO MORAL",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "INTERVALO INTERJORNADAS",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "1.50000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "INTERVALO INTRAJORNADA",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "1.50000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO E FERIADO"
+   ]
+  },
+  {
+   "nome": "MULTA CONVENCIONAL",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "MULTA DO ARTIGO 477 DA CLT",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "PARTICIPAÇÃO NOS LUCROS OU RESULTADOS - PLR",
+   "caracteristica": "comum",
+   "ocorrencia": "dezembro",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "PRÊMIO PRODUÇÃO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT",
+    "REPOUSO SEMANAL REMUNERADO"
+   ]
+  },
+  {
+   "nome": "REPOUSO SEMANAL REMUNERADO (COMISSIONISTA)",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS + 1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "REPOUSO SEMANAL REMUNERADO EM DOBRO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "30.0000",
+   "multiplicadorPadrao": "2.00000000",
+   "reflexosDisponiveis": [
+    "13º SALÁRIO",
+    "AVISO PRÉVIO",
+    "FÉRIAS +1/3",
+    "MULTA DO ARTIGO 477 DA CLT"
+   ]
+  },
+  {
+   "nome": "RESTITUIÇÃO / INDENIZAÇÃO DE DESPESA",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "SALDO DE EMPREITADA",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "SALDO DE SALÁRIO",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "MULTA DO ARTIGO 467 DA CLT"
+   ]
+  },
+  {
+   "nome": "SALÁRIO MATERNIDADE",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": true,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "SALÁRIO RETIDO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": true,
+    "irpf": true,
+    "fgts": true,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "1.00000000",
+   "reflexosDisponiveis": [
+    "MULTA DO ARTIGO 467 DA CLT"
+   ]
+  },
+  {
+   "nome": "TÍQUETE-ALIMENTAÇÃO",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "VALE TRANSPORTE",
+   "caracteristica": "comum",
+   "ocorrencia": "mensal",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": "1.0000",
+   "multiplicadorPadrao": "2.00000000",
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "VALOR PAGO - NÃO TRIBUTÁVEL",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": false,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  },
+  {
+   "nome": "VALOR PAGO - TRIBUTÁVEL",
+   "caracteristica": "comum",
+   "ocorrencia": "desligamento",
+   "incidencias": {
+    "inss": false,
+    "irpf": true,
+    "fgts": false,
+    "previdenciaPrivada": false,
+    "pensaoAlimenticia": false
+   },
+   "divisorPadrao": null,
+   "multiplicadorPadrao": null,
+   "reflexosDisponiveis": []
+  }
+ ]
+}

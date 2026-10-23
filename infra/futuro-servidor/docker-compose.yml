@@ -1,0 +1,79 @@
+# ⏸ ARQUIVADO (ver ADR-0006). Mantido só para um eventual modo servidor.
+# ESQUELETO para desenvolvimento local (Fases 1–2). Nada aqui é para produção.
+# O worker compartilha a rede do motor (network_mode) para alcançar 127.0.0.1:9257 sem expor a porta.
+name: pjecalc-api
+
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: pjecalc_api
+      POSTGRES_USER: pjecalc_api
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?defina no .env}
+    volumes: [pgdata:/var/lib/postgresql/data]
+
+  redis:
+    image: redis:7
+    networks: [default, isolada]   # o adaptador (rede do motor) precisa alcançar a fila
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: ${MINIO_USER:?defina no .env}
+      MINIO_ROOT_PASSWORD: ${MINIO_PASSWORD:?defina no .env}
+    volumes: [minio:/data]
+
+  api:
+    build: ../../api
+    environment:
+      DATABASE_URL: postgres://pjecalc_api:${POSTGRES_PASSWORD}@postgres:5432/pjecalc_api
+      REDIS_URL: redis://redis:6379
+      S3_ENDPOINT: http://minio:9000
+    ports: ["8080:8080"]
+    networks: [default]
+    depends_on: [postgres, redis, minio]
+
+  motor:
+    build:
+      context: ../../motor/runtime/futuro-docker
+      args:
+        PJECALC_URL: ${PJECALC_URL:?URL do instalador oficial}
+        PJECALC_SHA256: ${PJECALC_SHA256:?sha256 do instalador}
+    image: pjecalc-motor:2.16
+    mem_limit: 3g
+    read_only: true
+    tmpfs: [/tmp]
+    volumes:
+      - motor-dados:/opt/pjecalc/.dados
+      - motor-tomcat-work:/opt/pjecalc/tomcat/work
+      - motor-tomcat-temp:/opt/pjecalc/tomcat/temp
+      - motor-tomcat-logs:/opt/pjecalc/tomcat/logs
+    networks: [isolada]
+    # SEM "ports:" — o PJe-Calc nunca é publicado.
+
+  adaptador:
+    build: ../../motor/adaptador
+    network_mode: "service:motor"   # enxerga 127.0.0.1:9257 do motor
+    environment:
+      REDIS_URL: redis://redis:6379  # alcançável porque o redis também está na rede "isolada"
+    depends_on: [motor, redis]
+
+  interface:
+    build: ../../interface
+    environment:
+      API_URL: http://api:8080/v1
+    ports: ["3000:3000"]
+    depends_on: [api]
+
+networks:
+  isolada:
+    internal: true   # sem saída para a internet
+
+volumes:
+  pgdata: {}
+  minio: {}
+  motor-dados: {}
+  motor-tomcat-work: {}
+  motor-tomcat-temp: {}
+  motor-tomcat-logs: {}

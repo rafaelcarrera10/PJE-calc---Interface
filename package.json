@@ -1,0 +1,18 @@
+{
+  "name": "pjecalc-facil",
+  "private": true,
+  "version": "0.1.0",
+  "description": "PJE Calc Fácil — API local + interface amigável sobre o PJe-Calc Cidadão (uso pessoal)",
+  "workspaces": ["api", "interface"],
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "dev": "concurrently -n api,interface -c blue,green \"npm run dev -w api\" \"npm run dev -w interface\"",
+    "build": "npm run build -w interface && npm run verificar -w api",
+    "start": "npm run start -w api",
+    "test": "npm test -w api",
+    "verificar": "npm run verificar -w api && npm run verificar -w interface"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
