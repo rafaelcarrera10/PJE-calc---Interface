@@ -1,0 +1,67 @@
+{
+  "versaoEspecificacao": "1.0",
+  "_aviso": "Gabarito 1 (fictício). Ver README.md desta pasta.",
+  "processo": { "numero": "0000101-27.2025.5.04.0001", "regional": "TRT4", "vara": "0001" },
+  "partes": {
+    "reclamante": { "nome": "GABARITO 1 RECLAMANTE FICTICIO" },
+    "reclamado": { "nome": "EMPRESA FICTICIA GABARITO LTDA" }
+  },
+  "contrato": {
+    "admissao": "2022-03-01",
+    "demissao": "2025-01-31",
+    "ajuizamento": "2025-03-10",
+    "tipoRescisao": "sem_justa_causa",
+    "avisoPrevio": { "tipo": "indenizado", "projetar": true },
+    "ultimaRemuneracao": "2500.00"
+  },
+  "parametros": {
+    "uf": "RS",
+    "municipio": "Porto Alegre",
+    "cargaHorariaMensal": "220",
+    "sabadoDiaUtil": true,
+    "prescricao": { "quinquenal": false, "fgtsTrintenaria": false },
+    "maiorRemuneracao": "2500.00",
+    "zerarValoresNegativos": false
+  },
+  "historicoSalarial": [
+    {
+      "nome": "Última remuneração",
+      "incidencias": { "fgts": false, "inss": true },
+      "periodos": [{ "de": "2022-03", "ate": "2025-01", "valor": "2500.00", "fgtsRecolhido": false, "inssRecolhido": false }]
+    }
+  ],
+  "ferias": [
+    {
+      "aquisitivo": { "inicio": "2022-03-01", "fim": "2023-02-28" },
+      "situacao": "gozadas",
+      "gozos": [{ "inicio": "2024-01-31", "fim": "2024-02-29" }]
+    },
+    { "aquisitivo": { "inicio": "2023-03-01", "fim": "2024-02-29" }, "situacao": "indenizadas" }
+  ],
+  "verbas": [
+    { "catalogo": "SALDO DE SALÁRIO", "periodo": { "inicio": "2022-03-01", "fim": "2025-01-31" },
+      "base": { "tipo": "historico_salarial", "historicos": ["Última remuneração"] } },
+    { "catalogo": "AVISO PRÉVIO", "periodo": { "inicio": "2022-03-01", "fim": "2025-01-31" },
+      "base": { "tipo": "historico_salarial", "historicos": ["Última remuneração"] } },
+    { "catalogo": "13º SALÁRIO", "periodo": { "inicio": "2025-01-01", "fim": "2025-01-31" },
+      "base": { "tipo": "historico_salarial", "historicos": ["Última remuneração"] } },
+    { "catalogo": "FÉRIAS + 1/3", "periodo": { "inicio": "2024-03-01", "fim": "2025-01-31" },
+      "base": { "tipo": "maior_remuneracao" } },
+    { "catalogo": "MULTA DO ARTIGO 477 DA CLT", "periodo": { "inicio": "2022-03-01", "fim": "2025-01-31" } }
+  ],
+  "fgts": { "aliquota": "8", "multa": "40", "deduzirDepositados": false, "comporPrincipal": true },
+  "impostoDeRenda": { "apurar": true, "dependentes": 0 },
+  "correcaoJurosMulta": {
+    "combinacao": [
+      { "aPartirDe": "2022-03-01", "indice": "IPCAE", "juros": "TRD_SIMPLES" },
+      { "aPartirDe": "2024-08-30", "indice": "IPCA", "juros": "TAXA_LEGAL" }
+    ],
+    "indicesAcumulados": "MES_SUBSEQUENTE_AO_VENCIMENTO"
+  },
+  "anotacoes": {
+    "premissas": [
+      "FGTS pago ao reclamante, multa de 40% sobre o devido, excluindo o aviso da base da multa (padrão do PJe-Calc).",
+      "Custas de conhecimento de 2% devidas pelo reclamado (padrão do PJe-Calc)."
+    ]
+  }
+}

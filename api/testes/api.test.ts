@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { construirApp } from '../src/servidor.js';
-import { cnjValido } from '../src/modulos/validacao.js';
+import { cnjValido, validarEspecificacao } from '../src/modulos/validacao.js';
 
 const aqui = path.dirname(fileURLToPath(import.meta.url));
 const exemplo = JSON.parse(fs.readFileSync(path.join(aqui, '..', '..', 'contratos', 'exemplos', 'calculo-horas-extras.json'), 'utf8'));
@@ -111,4 +111,16 @@ test('resolvida=true preenche padrões do PJe-Calc', async () => {
   const c = await app.inject({ method: 'POST', url: '/v1/calculos', headers: H, payload: exemplo });
   const r = (await app.inject({ method: 'GET', url: `/v1/calculos/${c.json().id}?resolvida=true`, headers: H })).json();
   assert.equal(r.especificacao.parametros.feriadoEstadual, true);
+});
+
+test('gabaritos do adaptador: especificações são válidas', () => {
+  const gabaritos = path.join('motor', 'adaptador', 'testes', 'gabaritos');
+  for (const f of [
+    path.join(gabaritos, 'gabarito-1-rescisao.json'),
+    path.join('contratos', 'exemplos', 'calculo-horas-extras.json'),
+    path.join(gabaritos, 'gabarito-3-insalubridade.json'),
+  ]) {
+    const v = validarEspecificacao(JSON.parse(fs.readFileSync(path.join(aqui, '..', '..', f), 'utf8')));
+    assert.equal(v.valido, true, `${f}: ${JSON.stringify(v.erros)}`);
+  }
 });

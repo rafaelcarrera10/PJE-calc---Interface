@@ -12,7 +12,10 @@ adaptador: ao montar o mesmo cálculo a partir da especificação JSON, o result
 
 Arquivos de cada gabarito: `.PJC` (exportado pelo PJe-Calc após liquidar) e `.pdf` (relatório completo). O mesmo
 relatório em `.html`, útil para leitura automática dos valores, é gerado localmente e não é versionado (0,5 a 3 MB por
-arquivo). Os valores esperados estão em
+arquivo). Cada gabarito também está escrito como especificação JSON (`gabarito-1-rescisao.json`,
+`gabarito-3-insalubridade.json`; o gabarito 2 é o exemplo de `contratos/exemplos`); o que a especificação ainda não
+consegue expressar está em [lacunas da especificação](../../../../docs/06-api/lacunas-da-especificacao.md). Os valores
+esperados estão em
 [`valores-esperados.json`](valores-esperados.json).
 
 > Os resultados dependem das tabelas de índices vigentes na data da atualização. Ao atualizar as tabelas do PJe-Calc,

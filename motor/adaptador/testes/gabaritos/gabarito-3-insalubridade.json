@@ -1,0 +1,61 @@
+{
+  "versaoEspecificacao": "1.0",
+  "_aviso": "Gabarito 3 (fictício). Ver README.md desta pasta.",
+  "processo": { "numero": "0000303-98.2025.5.04.0002", "regional": "TRT4", "vara": "0002" },
+  "partes": {
+    "reclamante": { "nome": "GABARITO 3 RECLAMANTE FICTICIO" },
+    "reclamado": { "nome": "INDUSTRIA FICTICIA GABARITO LTDA" }
+  },
+  "contrato": {
+    "admissao": "2021-02-01",
+    "demissao": "2024-12-31",
+    "ajuizamento": "2025-04-15",
+    "tipoRescisao": "sem_justa_causa",
+    "avisoPrevio": { "tipo": "indenizado", "projetar": true },
+    "ultimaRemuneracao": "1800.00"
+  },
+  "parametros": {
+    "uf": "RS",
+    "municipio": "Porto Alegre",
+    "cargaHorariaMensal": "220",
+    "sabadoDiaUtil": true,
+    "prescricao": { "quinquenal": false, "fgtsTrintenaria": false },
+    "maiorRemuneracao": "1800.00",
+    "zerarValoresNegativos": false
+  },
+  "historicoSalarial": [
+    {
+      "nome": "Última remuneração",
+      "incidencias": { "fgts": false, "inss": true },
+      "periodos": [{ "de": "2021-02", "ate": "2024-12", "valor": "1800.00", "fgtsRecolhido": false, "inssRecolhido": false }]
+    }
+  ],
+  "verbas": [
+    {
+      "catalogo": "ADICIONAL DE INSALUBRIDADE 20%",
+      "periodo": { "inicio": "2021-02-01", "fim": "2024-12-31" },
+      "base": { "tipo": "salario_minimo" },
+      "divisor": { "tipo": "informado", "valor": "1" },
+      "multiplicador": "0.2",
+      "quantidade": { "tipo": "informada", "valor": "1" },
+      "reflexos": [{ "catalogo": "13º SALÁRIO" }, { "catalogo": "AVISO PRÉVIO" }, { "catalogo": "FÉRIAS + 1/3" }]
+    }
+  ],
+  "fgts": { "aliquota": "8", "multa": "40", "deduzirDepositados": false, "comporPrincipal": true },
+  "impostoDeRenda": { "apurar": true, "dependentes": 0 },
+  "honorarios": [{ "devedor": "reclamado", "credor": "ADVOGADO EXEMPLO (FICTICIO)", "percentual": "10", "base": "bruto" }],
+  "correcaoJurosMulta": {
+    "combinacao": [
+      { "aPartirDe": "2021-02-01", "indice": "IPCAE", "juros": "TRD_SIMPLES" },
+      { "aPartirDe": "2024-08-30", "indice": "IPCA", "juros": "TAXA_LEGAL" }
+    ],
+    "indicesAcumulados": "MES_SUBSEQUENTE_AO_VENCIMENTO"
+  },
+  "anotacoes": {
+    "premissas": [
+      "FGTS pago ao reclamante, multa de 40% sobre o devido (padrão do PJe-Calc).",
+      "Férias: períodos aquisitivos gerados pelo PJe-Calc com a situação padrão.",
+      "Custas de conhecimento de 2% devidas pelo reclamado (padrão do PJe-Calc)."
+    ]
+  }
+}
