@@ -9,6 +9,9 @@ motor/runtime/dist/
 *.pjc
 dados-clientes/
 saida/
+# Exceção: gabaritos fictícios do adaptador (sem dados reais). O HTML do relatório fica só local.
+!motor/adaptador/testes/gabaritos/*.PJC
+motor/adaptador/testes/gabaritos/*.html
 # Ambiente
 .env
 .env.*

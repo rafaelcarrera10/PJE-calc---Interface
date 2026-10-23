@@ -15,12 +15,12 @@ flowchart LR
 > Faltam: o adaptador real (Fase 1), a especificação completa (INSS, multas, custas, cartão de ponto) e o instalador.
 
 ## Fase 0 — Preparar o terreno (1 semana) ← **você está aqui**
-- [ ] Instalar o **PJe-Calc Cidadão 2.16.x** oficial no Windows (site do TRT8) e confirmar que abre e liquida.
-- [ ] Anotar o caminho da instalação e a versão exata.
-- [ ] Fazer **2 ou 3 cálculos-gabarito à mão**, com dados fictícios ou anonimizados. Sugestão: (1) rescisão simples sem justa causa;
+- [x] Instalar o **PJe-Calc Cidadão 2.16.x** oficial no Windows (site do TRT8) e confirmar que abre e liquida.
+- [x] Anotar o caminho da instalação e a versão exata (2.16.0, `C:\Program Files\PJE Calc Fácil`).
+- [x] Fazer **2 ou 3 cálculos-gabarito à mão** (feitos em 23/10/2026: [gabaritos](../motor/adaptador/testes/gabaritos/README.md)), com dados fictícios ou anonimizados. Sugestão: (1) rescisão simples sem justa causa;
       (2) horas extras com reflexos; (3) adicional de insalubridade com FGTS e honorários. Exportar o `.PJC` e o PDF de cada um para
       `testes/gabaritos/` (pasta ignorada pelo Git se tiver dados reais).
-- [ ] Instalar no Windows: Git, Node 22 LTS e VS Code (para os testes reais do adaptador).
+- [x] Instalar no Windows: Git, Node 22 LTS e VS Code (para os testes reais do adaptador).
 
 ## Fase 1 — Adaptador (prova de conceito, 3–4 semanas)
 **Objetivo:** liquidar os gabaritos **sem abrir a tela do PJe-Calc**, por um comando no terminal.

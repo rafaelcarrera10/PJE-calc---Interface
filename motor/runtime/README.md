@@ -35,7 +35,20 @@ stateDiagram-v2
 
 - Forma de iniciar sem janela: Tomcat direto (`org.apache.catalina.startup.Bootstrap` com `bin\lib\*.jar`) ou iniciador
   Java próprio que reproduz os passos do lançador oficial sem Swing.
-- Se o lançador oficial (`TrocadorConfig`) altera portas ou o `persistence.xml` ao iniciar.
-- Parada ordenada pelo comando `SHUTDOWN` na porta 9356, com fechamento correto do arquivo `.h2.db`.
-- Tempos de inicialização (estimativa de 1 a 3 minutos) e de liquidação.
+- Parada ordenada com fechamento correto do arquivo `.h2.db`.
 - Comportamento do firewall do Windows na primeira execução do `java.exe`; o acesso à rede deve ser negado, pois o uso é local.
+
+## Validado no Windows (23/10/2026, PJe-Calc 2.16.0)
+
+- O lançador oficial (`java -jar bin\pjecalc.jar`) respeita as portas alteradas no `server.xml` da cópia: a instância
+  atendeu em 9357 sem tocar na instalação original.
+- O lançador **não roda com `-Djava.awt.headless=true`** (`HeadlessException`); iniciar sem janela exige o Tomcat direto
+  ou um iniciador próprio.
+- O lançador **não abre a porta de shutdown** (9356); a parada ordenada precisa de outro mecanismo. Após encerrar o
+  processo à força, o banco H2 voltou íntegro.
+- A propriedade `-Dseguranca.pjecalc.tokenServicos` do `iniciarPjeCalc.bat` é obrigatória para a atualização online de
+  tabelas.
+- Uma instalação nova vem **sem índices de correção e juros**; é preciso executar "Atualização de Tabelas e Índices"
+  antes de liquidar.
+- Tempos: inicialização em 10 a 14 s; liquidação em cerca de 2,5 s.
+- Operação pela interface web e particularidades do JSF: ver [gabaritos](../adaptador/testes/gabaritos/README.md).

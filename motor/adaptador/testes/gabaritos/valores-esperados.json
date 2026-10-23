@@ -1,0 +1,67 @@
+{
+  "_aviso": "Cálculos fictícios. Valores do PJe-Calc 2.16.0, tabelas do TRT4 atualizadas em 23/10/2026, liquidação em 31/10/2026.",
+  "gabaritos": [
+    {
+      "arquivo": "gabarito-1-rescisao",
+      "processo": "0000101-27.2025.5.04.0001",
+      "dataLiquidacao": "2026-10-31",
+      "verbas": {
+        "13º SALÁRIO": { "corrigido": "450.88", "juros": "66.12", "total": "517.00" },
+        "AVISO PRÉVIO": { "corrigido": "3246.33", "juros": "511.54", "total": "3757.87" },
+        "FÉRIAS + 1/3": { "corrigido": "7214.06", "juros": "1136.76", "total": "8350.82" },
+        "MULTA DO ARTIGO 477 DA CLT": { "corrigido": "2705.28", "juros": "426.28", "total": "3131.56" },
+        "SALDO DE SALÁRIO": { "corrigido": "2705.28", "juros": "386.13", "total": "3091.41" },
+        "FGTS 8%": { "corrigido": "512.20", "juros": "80.71", "total": "592.91" },
+        "MULTA SOBRE FGTS 40%": { "corrigido": "100.99", "juros": "15.91", "total": "116.90" }
+      },
+      "brutoReclamante": "19558.47",
+      "liquidoReclamante": "19272.42",
+      "contribuicaoSocial": "1172.25",
+      "deducaoContribuicaoSocial": "286.05",
+      "irpf": "0.00"
+    },
+    {
+      "arquivo": "gabarito-2-horas-extras",
+      "processo": "0000123-85.2025.5.04.0001",
+      "especificacao": "contratos/exemplos/calculo-horas-extras.json",
+      "dataLiquidacao": "2026-10-31",
+      "verbas": {
+        "HORAS EXTRAS 50%": { "corrigido": "31003.87", "juros": "0.00", "total": "31003.87" },
+        "13º SALÁRIO SOBRE HORAS EXTRAS 50%": { "corrigido": "2564.90", "juros": "0.00", "total": "2564.90" },
+        "AVISO PRÉVIO SOBRE HORAS EXTRAS 50%": { "corrigido": "829.22", "juros": "0.00", "total": "829.22" },
+        "FÉRIAS + 1/3 SOBRE HORAS EXTRAS 50%": { "corrigido": "3487.59", "juros": "0.00", "total": "3487.59" },
+        "REPOUSO SEMANAL REMUNERADO E FERIADO SOBRE HORAS EXTRAS 50%": { "corrigido": "6500.96", "juros": "0.00", "total": "6500.96" },
+        "FGTS 8%": { "corrigido": "2480.32", "juros": "0.00", "total": "2480.32" },
+        "MULTA SOBRE FGTS 40%": { "corrigido": "992.12", "juros": "0.00", "total": "992.12" }
+      },
+      "brutoReclamante": "47858.98",
+      "liquidoReclamante": "46390.52",
+      "contribuicaoSocial": "12367.53",
+      "deducaoContribuicaoSocial": "1468.46",
+      "honorarios": "7178.85",
+      "custas": "1318.74",
+      "irpf": "0.00"
+    },
+    {
+      "arquivo": "gabarito-3-insalubridade",
+      "processo": "0000303-98.2025.5.04.0002",
+      "dataLiquidacao": "2026-10-31",
+      "verbas": {
+        "ADICIONAL DE INSALUBRIDADE 20%": { "corrigido": "13519.88", "juros": "2553.02", "total": "16072.90" },
+        "13º SALÁRIO SOBRE ADICIONAL DE INSALUBRIDADE 20%": { "corrigido": "1175.29", "juros": "211.38", "total": "1386.67" },
+        "AVISO PRÉVIO SOBRE ADICIONAL DE INSALUBRIDADE 20%": { "corrigido": "397.90", "juros": "65.04", "total": "462.94" },
+        "FÉRIAS + 1/3 SOBRE ADICIONAL DE INSALUBRIDADE 20%": { "corrigido": "1654.76", "juros": "287.69", "total": "1942.45" },
+        "FGTS 8%": { "corrigido": "1081.58", "juros": "219.04", "total": "1300.62" },
+        "MULTA SOBRE FGTS 40%": { "corrigido": "432.63", "juros": "70.72", "total": "503.35" }
+      },
+      "brutoReclamante": "21668.93",
+      "liquidoReclamante": "20616.78",
+      "contribuicaoSocial": "5821.18",
+      "deducaoContribuicaoSocial": "1052.15",
+      "honorarios": "2166.89",
+      "custas": "572.10",
+      "totalDevidoReclamado": "29176.95",
+      "irpf": "0.00"
+    }
+  ]
+}
