@@ -1,0 +1,22 @@
+{
+  "name": "@pjecalc-facil/adaptador",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Opera o PJe-Calc Cidadão por HTTP: inicia a instância dedicada, importa, liquida, emite relatório e exporta",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "tsx --disable-warning=ExperimentalWarning --test testes/unidade/*.test.ts",
+    "test:regressao": "tsx --disable-warning=ExperimentalWarning --test --test-concurrency=1 testes/regressao.test.ts",
+    "motor": "tsx --disable-warning=ExperimentalWarning src/cli.ts",
+    "verificar": "tsc --noEmit"
+  },
+  "dependencies": {
+    "node-html-parser": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

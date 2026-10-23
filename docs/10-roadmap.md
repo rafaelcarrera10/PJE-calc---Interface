@@ -12,9 +12,10 @@ flowchart LR
 ```
 
 > **Adiantado (22/10/2026):** protótipo da API local e da interface já construído (sem motor) — partes das Fases 2 e 3.
-> Faltam: o adaptador real (Fase 1), a especificação completa (INSS, multas, custas, cartão de ponto) e o instalador.
+> Faltam: o restante do adaptador (regerar, pendências, catálogo), o gerador de `.PJC` a partir da especificação, a
+> especificação completa (INSS, multas, custas, cartão de ponto), a ligação API ↔ adaptador e o instalador.
 
-## Fase 0 — Preparar o terreno (1 semana) ← **você está aqui**
+## Fase 0 — Preparar o terreno (1 semana) ✅ concluída em 23/10/2026
 - [x] Instalar o **PJe-Calc Cidadão 2.16.x** oficial no Windows (site do TRT8) e confirmar que abre e liquida.
 - [x] Anotar o caminho da instalação e a versão exata (2.16.0, `C:\Program Files\PJE Calc Fácil`).
 - [x] Fazer **2 ou 3 cálculos-gabarito à mão** (feitos em 23/10/2026: [gabaritos](../motor/adaptador/testes/gabaritos/README.md)), com dados fictícios ou anonimizados. Sugestão: (1) rescisão simples sem justa causa;
@@ -22,12 +23,14 @@ flowchart LR
       `testes/gabaritos/` (pasta ignorada pelo Git se tiver dados reais).
 - [x] Instalar no Windows: Git, Node 22 LTS e VS Code (para os testes reais do adaptador).
 
-## Fase 1 — Adaptador (prova de conceito, 3–4 semanas)
+## Fase 1 — Adaptador (prova de conceito, 3–4 semanas) ← **você está aqui**
 **Objetivo:** liquidar os gabaritos **sem abrir a tela do PJe-Calc**, por um comando no terminal.
-- Criar a **instância dedicada** (cópia do PJe-Calc oficial, porta 9357, sem AJP) e iniciá-la/pará-la sem janela.
-- Operações: `importar`, `regerar`, `pendencias`, `liquidar`, `imprimir`, `exportar`, `excluir`, `catalogoDeVerbas`.
-- **Pronto quando:** `pjecalc-facil liquidar gabarito-1.PJC --data 2026-10-31` gera PDF e `.PJC` que batem **ao centavo** com os
-  feitos à mão; medir o tempo de partida e de liquidação.
+- [x] Criar a **instância dedicada** (cópia do PJe-Calc oficial, porta 9357, sem AJP) e iniciá-la/pará-la sem janela
+      ([ADR-0007](adr/0007-partida-pelo-tomcat-e-operacao-por-http.md)).
+- [x] Operações `importar`, `liquidar`, `imprimir`, `exportar`, `excluir` ([adaptador](../motor/adaptador/README.md)).
+- [ ] Operações `regerar`, `pendencias`, `catalogoDeVerbas`.
+- [x] **Pronto quando:** `npm run motor -- liquidar gabarito-1.PJC --data 2026-10-31` gera PDF e `.PJC` que batem **ao centavo**
+      com os feitos à mão (23/10/2026: os três gabaritos conferem; partida em ~12 s, liquidação completa em ~7–10 s).
 
 ## Fase 2 — API local + especificação (4–6 semanas)
 - Especificação de cálculo completa + gerador de `.PJC` de entrada.

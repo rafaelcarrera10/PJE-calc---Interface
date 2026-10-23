@@ -11,3 +11,4 @@ ADR é criado e o anterior passa a indicar a substituição.
 | [0004](0004-um-job-por-motor.md) | Uma tarefa por instância do motor | Parcialmente substituída pela 0006 |
 | [0005](0005-modelo-de-dominio-proprio.md) | Modelo de domínio próprio e camada anticorrupção versionada | Aceita |
 | [0006](0006-uso-pessoal-local-windows.md) | Uso pessoal: aplicação local no Windows, instância dedicada do PJe-Calc e instalador | Aceita |
+| [0007](0007-partida-pelo-tomcat-e-operacao-por-http.md) | Partida pelo Bootstrap do Tomcat, sem janela, e operação do PJe-Calc por HTTP | Aceita |

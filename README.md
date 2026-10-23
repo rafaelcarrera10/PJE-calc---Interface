@@ -15,10 +15,12 @@ Versão **0.1** (protótipo).
 |---|---|
 | Interface | Funcional: cadastro, edição por etapas, validação contínua e revisão |
 | API local | Funcional: cálculos versionados, validação, catálogos |
-| Integração com o PJe-Calc (liquidação) | Em desenvolvimento |
+| Adaptador do PJe-Calc | Funcional pela linha de comando: inicia o PJe-Calc sem janela e liquida um `.PJC` (PDF, HTML e `.PJC` oficiais) |
+| Integração da API com o adaptador | Em desenvolvimento |
 | Instalador para Windows | Planejado |
 
-Enquanto a integração não estiver concluída, a operação de liquidar valida o cálculo e informa que o PJe-Calc não está conectado.
+Enquanto a API não estiver ligada ao adaptador, liquidar pela interface valida o cálculo e informa que o PJe-Calc não
+está conectado; a liquidação de um `.PJC` já funciona pela linha de comando (`npm run motor`).
 
 ## Arquitetura
 
@@ -46,7 +48,7 @@ flowchart LR
 
 - Node.js 22.13 ou superior (recomendado: 22 LTS)
 - Google Chrome ou Microsoft Edge
-- Para liquidar, quando a integração estiver disponível: Windows e PJe-Calc Cidadão 2.16.x
+- Para liquidar: Windows, PJe-Calc Cidadão 2.16.x e a cópia dedicada descrita em [`motor/runtime`](motor/runtime/README.md)
 
 ## Instalação
 
@@ -66,7 +68,9 @@ A pasta `node_modules` é específica de cada sistema operacional e não deve se
 | `npm run dev` | API (porta 8080) e interface com recarga automática (porta 5173). Acesse http://localhost:5173 |
 | `npm run build` | Compila a interface e verifica os tipos da API |
 | `npm start` | Executa a versão compilada em http://127.0.0.1:8080 |
-| `npm test` | Testes da API |
+| `npm test` | Testes da API e do adaptador (sem PJe-Calc) |
+| `npm run motor -- <comando>` | Adaptador: `estado`, `iniciar`, `parar`, `liquidar arquivo.PJC --data AAAA-MM-DD` ([detalhes](motor/adaptador/README.md)) |
+| `npm run test:regressao -w motor/adaptador` | Gabaritos contra o PJe-Calc real, conferidos ao centavo |
 
 ## Dados
 
