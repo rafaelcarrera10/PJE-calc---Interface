@@ -49,7 +49,7 @@
       "base": { "tipo": "maior_remuneracao" } },
     { "catalogo": "MULTA DO ARTIGO 477 DA CLT", "periodo": { "inicio": "2022-03-01", "fim": "2025-01-31" } }
   ],
-  "fgts": { "aliquota": "8", "multa": "40", "deduzirDepositados": false, "comporPrincipal": true },
+  "fgts": { "aliquota": "8", "destino": "pagar", "multa": "40", "baseDaMulta": "devido", "deduzirDepositados": false, "comporPrincipal": true },
   "impostoDeRenda": { "apurar": true, "dependentes": 0 },
   "correcaoJurosMulta": {
     "combinacao": [

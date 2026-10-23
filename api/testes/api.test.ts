@@ -107,10 +107,13 @@ test('catálogo de verbas real (provisório) com reflexos', async () => {
   assert.equal(r.provisorio, true);
 });
 
-test('resolvida=true preenche padrões do PJe-Calc', async () => {
-  const c = await app.inject({ method: 'POST', url: '/v1/calculos', headers: H, payload: exemplo });
+test('resolvida=true preenche os padrões do schema', async () => {
+  const c = await app.inject({ method: 'POST', url: '/v1/calculos', headers: H, payload: { ...exemplo, fgts: {} } });
   const r = (await app.inject({ method: 'GET', url: `/v1/calculos/${c.json().id}?resolvida=true`, headers: H })).json();
   assert.equal(r.especificacao.parametros.feriadoEstadual, true);
+  assert.equal(r.especificacao.parametros.zerarValoresNegativos, false, 'mesmo padrão do PJe-Calc');
+  assert.equal(r.especificacao.fgts.destino, 'recolher');
+  assert.equal(r.especificacao.fgts.baseDaMulta, 'devido');
 });
 
 test('gabaritos do adaptador: especificações são válidas', () => {

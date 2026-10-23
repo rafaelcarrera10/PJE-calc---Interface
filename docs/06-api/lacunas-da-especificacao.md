@@ -10,12 +10,12 @@ exportados.
 
 ## Prioridade alta — alteram valores dos gabaritos
 
-| # | Lacuna | Onde aparece | No PJe-Calc (`.PJC`) | Proposta |
+| # | Lacuna | Onde aparece | No PJe-Calc (`.PJC`) | Situação |
 |---|---|---|---|---|
-| 1 | Destino do FGTS (pagar ao reclamante ou recolher em conta vinculada) | Gabaritos 1, 2 e 3 usam "pagar"; o padrão do PJe-Calc é "recolher" | `Fgts/destinoDoFgts` = `PAGAR` \| `RECOLHER` | `fgts.destino: "pagar" \| "recolher"` |
-| 2 | Base da multa do FGTS | Gabarito 2: "sobre o devido" dá R$ 20.021,05; "sobre a diferença" dá R$ 992,12 | `Fgts/incidenciaDoFgts` (5 opções) | `fgts.baseDaMulta: "devido" \| "diferenca" \| "saldo_saque" \| "devido_mais_saldo" \| "devido_menos_saldo"` |
-| 3 | Padrão de prescrição quinquenal | Schema: `true`; PJe-Calc: desmarcada | `Calculo/prescricaoQuinquenal` | Adaptador sempre envia o valor explícito; corrigir o texto de `?resolvida=true` ou o padrão |
-| 4 | Padrão de "zerar valores negativos" | Schema: `true`; PJe-Calc: `false` (cálculo e verbas) | `Calculo/zeraValorNegativo`, `Verba/zeraValorNegativo` | Alinhar o padrão do schema a `false` |
+| 1 | Destino do FGTS (pagar ao reclamante ou recolher em conta vinculada) | Gabaritos 1, 2 e 3 usam "pagar"; o padrão do PJe-Calc é "recolher" | `Fgts/destinoDoFgts` = `PAGAR` \| `RECOLHER` | **Resolvida:** `fgts.destino` (`pagar` \| `recolher`, padrão `recolher`), com campo na etapa FGTS |
+| 2 | Base da multa do FGTS | Gabarito 2: "sobre o devido" dá R$ 20.021,05; "sobre a diferença" dá R$ 992,12 | `Fgts/incidenciaDoFgts` (5 opções) | **Resolvida:** `fgts.baseDaMulta` (`devido`, `diferenca`, `saldo_saque`, `devido_mais_saldo_saque`, `devido_menos_saldo_saque`; padrão `devido`) |
+| 3 | Padrão de prescrição quinquenal | Schema: `true`; PJe-Calc: desmarcada | `Calculo/prescricaoQuinquenal` | **Resolvida (decisão):** o padrão da especificação continua `true`, documentado como exceção; o adaptador sempre envia o valor explícito |
+| 4 | Padrão de "zerar valores negativos" | Schema: `true`; PJe-Calc: `false` (cálculo e verbas) | `Calculo/zeraValorNegativo`, `Verba/zeraValorNegativo` | **Resolvida:** padrão alinhado a `false` no schema e na interface |
 | 5 | Histórico automático "ÚLTIMA REMUNERAÇÃO" | Gabaritos 1 e 3 | Criado a partir de `valorUltimaRemuneracao`, sem FGTS; nome e valores bloqueados | Definir regra: o adaptador usa o histórico automático quando a especificação não traz histórico, e cria históricos próprios para faixas salariais |
 | 6 | Linha automática de juros "Sem juros a partir do ajuizamento" | Gabaritos 1 e 3 | Inserida em `listaDeCombinacaoDeJuros` ao criar o cálculo | O adaptador apaga as combinações padrão e grava só as da especificação |
 
@@ -41,6 +41,6 @@ exportados.
 
 ## Próximos passos sugeridos
 
-1. Incluir no schema os itens 1, 2, 7 e 8 (FGTS) e alinhar os padrões dos itens 3 e 4.
+1. ~~Itens 1 a 4~~ (resolvidos em 23/10/2026; gabaritos atualizados com `destino` e `baseDaMulta`).
 2. Fixar no adaptador as regras dos itens 5 e 6.
-3. Atualizar as especificações dos gabaritos para usar os novos campos.
+3. Itens 7 e 8 (demais campos do FGTS) e os de prioridade média.

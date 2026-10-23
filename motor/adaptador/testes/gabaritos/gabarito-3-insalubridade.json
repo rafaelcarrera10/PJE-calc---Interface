@@ -41,7 +41,7 @@
       "reflexos": [{ "catalogo": "13º SALÁRIO" }, { "catalogo": "AVISO PRÉVIO" }, { "catalogo": "FÉRIAS + 1/3" }]
     }
   ],
-  "fgts": { "aliquota": "8", "multa": "40", "deduzirDepositados": false, "comporPrincipal": true },
+  "fgts": { "aliquota": "8", "destino": "pagar", "multa": "40", "baseDaMulta": "devido", "deduzirDepositados": false, "comporPrincipal": true },
   "impostoDeRenda": { "apurar": true, "dependentes": 0 },
   "honorarios": [{ "devedor": "reclamado", "credor": "ADVOGADO EXEMPLO (FICTICIO)", "percentual": "10", "base": "bruto" }],
   "correcaoJurosMulta": {

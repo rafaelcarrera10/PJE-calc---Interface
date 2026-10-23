@@ -40,7 +40,7 @@ export function EtapaParametros() {
           <CampoSimNao rotulo="FGTS com prescrição trintenária?" valor={p.prescricao?.fgtsTrintenaria} padrao={false} caminho="/parametros/prescricao/fgtsTrintenaria"
             ajuda="Só em situações de transição (STF, ARE 709.212). Na dúvida, mantenha Não."
             aoMudar={(v) => set((x) => { x.prescricao = { ...x.prescricao, fgtsTrintenaria: v }; })} />
-          <CampoSimNao rotulo="Zerar valores negativos?" valor={p.zerarValoresNegativos} padrao caminho="/parametros/zerarValoresNegativos"
+          <CampoSimNao rotulo="Zerar valores negativos?" valor={p.zerarValoresNegativos} padrao={false} caminho="/parametros/zerarValoresNegativos"
             ajuda="Quando o valor pago supera o devido num mês, a diferença negativa é zerada em vez de abater dos outros meses."
             aoMudar={(v) => set((x) => { x.zerarValoresNegativos = v; })} />
         </Linha>

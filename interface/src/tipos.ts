@@ -93,7 +93,7 @@ export interface Especificacao {
   faltas?: { inicio: Data; fim: Data; justificada?: boolean; motivo?: string }[];
   ferias?: { aquisitivo: Periodo; situacao?: string; gozos?: Periodo[]; abonoPecuniario?: boolean; dobra?: boolean }[];
   verbas?: Verba[];
-  fgts?: { aliquota?: Decimal; multa?: string; deduzirDepositados?: boolean; comporPrincipal?: boolean };
+  fgts?: { aliquota?: Decimal; destino?: string; multa?: string; baseDaMulta?: string; deduzirDepositados?: boolean; comporPrincipal?: boolean };
   impostoDeRenda?: { apurar?: boolean; dependentes?: number; tributacaoExclusiva13?: boolean; tributacaoSeparadaFerias?: boolean; incidirSobreJuros?: boolean };
   honorarios?: Honorario[];
   correcaoJurosMulta?: { combinacao?: { aPartirDe: Data; indice: string; juros?: string }[]; indicesAcumulados?: string };

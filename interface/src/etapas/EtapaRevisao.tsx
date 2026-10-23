@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Secao } from '../componentes/Campos';
 import { useEditor } from '../paginas/contextoEditor';
+import { BASE_MULTA_FGTS } from '../util/opcoesFgts';
 import { etapaDoCaminho, tituloDaEtapa } from '../paginas/etapasMeta';
 import type { ItemErro } from '../tipos';
 import { formatarData, formatarDinheiro } from '../util/formatos';
@@ -35,6 +36,11 @@ function ListaProblemas({ itens, tipo }: { itens: ItemErro[]; tipo: 'erro' | 'av
 
 export function EtapaRevisao() {
   const { spec, erros, avisos, validarAgora, catalogos } = useEditor();
+  const fgts = spec.fgts ?? {};
+  const baseMulta = fgts.baseDaMulta && fgts.baseDaMulta !== 'devido'
+    ? BASE_MULTA_FGTS.find((o) => o.valor === fgts.baseDaMulta)?.rotulo.toLowerCase() : undefined;
+  const multaTxt = fgts.multa === 'nao_ha' ? 'não' : `${fgts.multa ?? '40'}%${baseMulta ? ` ${baseMulta}` : ''}`;
+  const resumoFgts = `${fgts.aliquota ?? '8'}% · ${fgts.destino === 'pagar' ? 'pagar' : 'recolher'} · multa ${multaTxt}`;
   const nomeIndice = (v: string) => catalogos.indices.find((o) => o.valor === v)?.rotulo ?? v;
   const nomeJuros = (v: string) => catalogos.juros.find((o) => o.valor === v)?.rotulo ?? v;
   const [validando, setValidando] = useState(false);
@@ -87,7 +93,7 @@ export function EtapaRevisao() {
             ))}
           </Bloco>
           <Bloco titulo="Encargos" etapa="encargos">
-            <Item r="FGTS" v={`${spec.fgts?.aliquota ?? '8'}% · multa ${spec.fgts?.multa === 'nao_ha' ? 'não' : `${spec.fgts?.multa ?? '40'}%`}`} />
+            <Item r="FGTS" v={resumoFgts} />
             <Item r="Imposto de renda" v={spec.impostoDeRenda?.apurar === false ? 'Não apurar' : `Apurar${spec.impostoDeRenda?.dependentes ? ` · ${spec.impostoDeRenda.dependentes} dependente(s)` : ''}`} />
             <Item r="Honorários" v={(spec.honorarios ?? []).map((h) => `${h.percentual}% (${h.devedor})`).join(', ') || undefined} />
           </Bloco>

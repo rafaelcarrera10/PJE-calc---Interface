@@ -65,10 +65,13 @@
         "prescricao": {
           "type": "object",
           "additionalProperties": false,
-          "properties": { "quinquenal": { "type": "boolean", "default": true }, "fgtsTrintenaria": { "type": "boolean", "default": false } }
+          "properties": {
+            "quinquenal": { "type": "boolean", "default": true, "description": "Padrão da especificação: aplicar. No PJe-Calc a opção vem desmarcada; o adaptador sempre envia o valor explícito." },
+            "fgtsTrintenaria": { "type": "boolean", "default": false }
+          }
         },
         "maiorRemuneracao": { "$ref": "#/$defs/dinheiro" },
-        "zerarValoresNegativos": { "type": "boolean", "default": true },
+        "zerarValoresNegativos": { "type": "boolean", "default": false },
         "limitarAvosAoPeriodo": { "type": "boolean", "default": false }
       }
     },
@@ -138,7 +141,13 @@
       "type": "object", "additionalProperties": false,
       "properties": {
         "aliquota": { "$ref": "#/$defs/decimal", "default": "8" },
+        "destino": { "enum": ["pagar", "recolher"], "default": "recolher", "description": "Pagar ao reclamante ou recolher em conta vinculada" },
         "multa": { "enum": ["40", "20", "nao_ha"], "default": "40" },
+        "baseDaMulta": {
+          "enum": ["devido", "diferenca", "saldo_saque", "devido_mais_saldo_saque", "devido_menos_saldo_saque"],
+          "default": "devido",
+          "description": "Sobre o que a multa incide: FGTS devido, diferença (devido − depositado), saldo e/ou saque, ou combinações"
+        },
         "deduzirDepositados": { "type": "boolean", "default": true },
         "comporPrincipal": { "type": "boolean" }
       }

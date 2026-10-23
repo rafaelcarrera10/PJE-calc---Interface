@@ -1,12 +1,8 @@
 import { CampoDecimal, CampoDinheiro, CampoInteiro, CampoSelecao, CampoSimNao, Linha, Secao } from '../componentes/Campos';
 import { useEditor } from '../paginas/contextoEditor';
 import type { Honorario } from '../tipos';
+import { BASE_MULTA_FGTS, DESTINO_FGTS, MULTA_FGTS } from '../util/opcoesFgts';
 
-const MULTA_FGTS = [
-  { valor: '40', rotulo: '40% (dispensa sem justa causa)' },
-  { valor: '20', rotulo: '20% (culpa recíproca ou acordo do art. 484-A)' },
-  { valor: 'nao_ha', rotulo: 'Sem multa' },
-];
 const DEVEDOR = [{ valor: 'reclamado', rotulo: 'Reclamado (empresa)' }, { valor: 'reclamante', rotulo: 'Reclamante (trabalhador)' }];
 const BASE_HON = [
   { valor: 'bruto', rotulo: 'Valor bruto da condenação' },
@@ -28,7 +24,15 @@ export function EtapaEncargos() {
         <Linha>
           <CampoDecimal rotulo="Alíquota" valor={f.aliquota} placeholder="8" sufixo="%" caminho="/fgts/aliquota"
             ajuda="8% é o padrão; 2% para contrato de aprendizagem." aoMudar={(v) => setF((x) => { x.aliquota = v; })} />
+          <CampoSelecao rotulo="Destino" valor={f.destino ?? 'recolher'} opcoes={DESTINO_FGTS} caminho="/fgts/destino"
+            ajuda="Padrão do PJe-Calc: recolher. Use “pagar” quando o FGTS deve ir direto ao reclamante (ex.: dispensa sem justa causa)."
+            aoMudar={(v) => setF((x) => { x.destino = v; })} />
           <CampoSelecao rotulo="Multa rescisória" valor={f.multa} opcoes={MULTA_FGTS} caminho="/fgts/multa" aoMudar={(v) => setF((x) => { x.multa = v; })} />
+          {f.multa !== 'nao_ha' && (
+            <CampoSelecao rotulo="Multa incide sobre" valor={f.baseDaMulta ?? 'devido'} opcoes={BASE_MULTA_FGTS} caminho="/fgts/baseDaMulta"
+              ajuda="Se a multa sobre os depósitos regulares já foi paga na rescisão, use “diferença”."
+              aoMudar={(v) => setF((x) => { x.baseDaMulta = v; })} />
+          )}
           <CampoSimNao rotulo="Deduzir o que já foi depositado?" valor={f.deduzirDepositados} padrao caminho="/fgts/deduzirDepositados"
             ajuda="Abate os depósitos já feitos (marcados como “FGTS recolhido” nos salários)." aoMudar={(v) => setF((x) => { x.deduzirDepositados = v; })} />
         </Linha>

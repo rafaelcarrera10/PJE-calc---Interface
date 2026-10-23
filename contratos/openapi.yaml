@@ -66,7 +66,7 @@ paths:
       operationId: obterCalculo
       summary: Obtém a especificação vigente
       parameters:
-        - { name: resolvida, in: query, description: Devolve a especificação com os padrões do PJe-Calc explícitos, schema: { type: boolean, default: false } }
+        - { name: resolvida, in: query, description: Devolve a especificação com os padrões do schema explícitos (em geral os do PJe-Calc; exceções descritas no schema), schema: { type: boolean, default: false } }
       responses:
         '200':
           description: OK

@@ -54,6 +54,7 @@ Exemplo completo: [`contratos/exemplos/calculo-horas-extras.json`](../../contrat
 ## Convenções
 
 - Datas `YYYY-MM-DD`; competências `YYYY-MM`; valores monetários e quantidades como **string decimal** com ponto.
-- Campos opcionais omitidos recebem o **padrão do PJe-Calc**. A API devolve a especificação "resolvida" (com os padrões
+- Campos opcionais omitidos recebem o **padrão do PJe-Calc**, com uma exceção deliberada: a prescrição quinquenal é
+  aplicada por padrão (no PJe-Calc ela vem desmarcada; o adaptador sempre envia o valor explícito). A API devolve a especificação "resolvida" (com os padrões
   explícitos) em `GET /calculos/{id}?resolvida=true`, para o usuário ver exatamente o que será usado.
 - Campos iniciados com `_` são anotações livres e ignoradas no cálculo (mesma convenção do *PJeCalcMCP*).

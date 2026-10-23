@@ -108,7 +108,9 @@
   ],
   "fgts": {
     "aliquota": "8",
+    "destino": "pagar",
     "multa": "40",
+    "baseDaMulta": "diferenca",
     "deduzirDepositados": true
   },
   "impostoDeRenda": {
